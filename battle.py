@@ -39,11 +39,43 @@ def isIronBird():
 def isOkDragonClaw():
   return True
 
+def isNotGoodDragonClaw():
+  return True 
+
 def isGoodDragonClaw():
+  return True
+
+def isNoUseEarthquake():
+  return True
+
+def isNotGoodEarthquake():
+  return True
+
+def isOkEarthquake():
   return True
 
 def isGoodEarthquake():
   return True
+
+def getDragonClawValue():
+  # ok 的情况最多，放第一可以减少不必要的检测
+  if isOkDragonClaw():
+    return 2
+  if isNotGoodDragonClaw():
+    return 1
+  if isGoodDragonClaw():
+    return 3
+
+def getEarthquakeValue():
+  # ok 的情况最多，放第一可以减少不必要的检测
+  if isOkEarthquake():
+    return 2
+  if isNoUseEarthquake():
+    return 0
+  if isNotGoodEarthquake():
+    return 1
+  if isGoodEarthquake():
+    return 3
 
 def useDragonClaw():
   print('dragon claw')
@@ -63,8 +95,8 @@ def isOkToMove():
 
 def autoUseMove():
   if isOkToMove():
-    # 遇到盔甲鸟或者地震没有效果绝佳且龙爪有效的情况，使用龙爪
-    if isIronBird() or (isGoodEarthquake() == False and (isOkDragonClaw() or isGoodDragonClaw())):
+    # 使用优先级较高的
+    if getDragonClawValue() >= getEarthquakeValue():
       useDragonClaw()
     else:
       useEarthquake()
@@ -75,15 +107,11 @@ def battleForMoney():
     autoUseMove()
     # 等待出招和损伤计算
     sleep(5)
-    if isFailOne():
-      pyautogui.press('b')
-      pyautogui.press('b')
-      pyautogui.press('b')
     if isBattleEnd():
       # 读完战斗结束后的会话
       for i in range(8):
-        randomWait()
         pyautogui.press('b')
+        randomWait()
       break
 
 def shinyMove():
