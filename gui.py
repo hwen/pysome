@@ -8,4 +8,5 @@ __author__ = 'hwen'
 import pyautogui
 import utils
 
-utils.input_hallo()
+# utils.input_hallo()
+utils.test()
