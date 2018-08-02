@@ -1,4 +1,5 @@
 import pyautogui
+from utils import randomWait
 
 isSuspend = False
 
@@ -35,4 +36,3 @@ def clickCityOnMap():
 def clickRunAway():
   if (isSuspend == False):
     print('clicked run away')
-

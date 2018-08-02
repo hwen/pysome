@@ -1,4 +1,7 @@
 import pyautogui
+import random
+from time import sleep
+from utils import randomWait
 
 def isBattleStart():
   # 识别战斗是否开始。
@@ -30,4 +33,27 @@ def runAway():
 def suspendBattle():
   print('suspended...')
 
+def shinyMove():
+  pyautogui.keyDown('right')
+  sleep(round(random.uniform(1.5, 1.8), 2))
+  pyautogui.keyUp('right')
+  pyautogui.keyDown('left')
+  sleep(round(random.uniform(1.5, 1.8), 2))
+  pyautogui.keyUp('left')
+
+def findShiny():
+  shinyRunCount = 0
+  shinyMove()
+  while True:
+    if isBattleStart():
+      shinyRunCount += 1
+      if isShiny():
+        suspendBattle()
+        print('hey man!!!!shiny!!!')
+        print('after running for ' + str(shinyRunCount) + ' time!!!')
+      else:
+        runAway()
+        shinyMove()
+    else:
+      shinyMove()
 

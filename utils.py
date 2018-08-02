@@ -1,4 +1,11 @@
 import pyautogui
+from time import sleep
+import random
+
+def randomWait():
+  wait = round(random.uniform(0.15, 1.85), 2)
+  sleep(wait)
+  print('wait:' + str(wait))
 
 def take_screenshot():
   img = pyautogui.screenshot()
