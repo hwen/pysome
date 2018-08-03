@@ -107,6 +107,7 @@ def battleForMoney():
     autoUseMove()
     # 等待出招和损伤计算
     sleep(5)
+    pyautogui.press('b')
     if isBattleEnd():
       # 读完战斗结束后的会话
       for i in range(8):
@@ -114,6 +115,26 @@ def battleForMoney():
         randomWait()
       break
 
+def useSweetSmell():
+  print('use sweet smell')
+
+def isOkToUseSweetSmell():
+  print('is ok to use sweet smell')
+  return True
+
+def battleForEv():
+  smellCount = 0
+  while True:
+    if isOkToUseSweetSmell():
+      useSweetSmell()
+      smellCount += 1
+      sleep(4)
+    if isBattleStart():
+      useEarthquake()
+      sleep(4)
+      if smellCount > 5:
+        break
+    
 def shinyMove():
   pyautogui.keyDown('right')
   sleep(round(random.uniform(1.5, 1.8), 2))
