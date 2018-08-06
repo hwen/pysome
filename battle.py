@@ -3,6 +3,24 @@ import random
 from time import sleep
 from utils import randomWait
 
+"""
+不知为什么么，pyautogui 在游戏的时候图像识别率很低。
+试了下AutoIt3的原生脚本，还有按键精灵，同样有识别率问题。
+而且在普通屏下测试了也是不行，又试过换过游戏UI，希望提高识别率。
+图像识别还是不行。
+搞到2点多。。。还是放弃这个方案算了。
+嘛，算是学到不少东西。
+py 还有个叫 pywinauto 也是个不错的库。以后如果要写自动脚本，可以试试。
+
+Nodejs 那边就有点搞笑了。。。
+有个叫 Robotjs 的东东，库都写了两年多了，图像识别还放在项目 planning 里
+笑人。。。
+"""
+
+
+mushroom = './resource/mushroom.bmp'
+sweetSmell = './resource/sweetsmell.bmp'
+
 def isBattleStart():
   # 识别战斗是否开始。
   return True
@@ -159,3 +177,15 @@ def findShiny():
     else:
       shinyMove()
 
+def test():
+  pos = pyautogui.locateCenterOnScreen(mushroom, grayscale = True)
+  pos2 = pyautogui.locateCenterOnScreen(sweetSmell)
+  print('mushroom is:')
+  print(pos)
+  print('sweetSmell is:')
+  print(pos2)
+
+print('waiting...')
+sleep(5)
+print('ready....')
+test()
