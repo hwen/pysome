@@ -4,7 +4,7 @@ from time import sleep
 from utils import randomWait
 
 """
-不知为什么么，pyautogui 在游戏的时候图像识别率很低。
+不知为什么么，pyautogui 在游戏的时候图像识别率很低。(但chrome那个测试，却是很灵)
 试了下AutoIt3的原生脚本，还有按键精灵，同样有识别率问题。
 而且在普通屏下测试了也是不行，又试过换过游戏UI，希望提高识别率。
 图像识别还是不行。
