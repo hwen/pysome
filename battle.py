@@ -3,7 +3,6 @@ import random
 from time import sleep
 from utils import randomWait
 
-<<<<<<< HEAD
 rpath = './resource/'
 drg = './resource/dragon.png'
 drgNotGood = './resource/dragon_notgood.png'
@@ -26,7 +25,7 @@ runImg = './resource/run.png'
 battleFlag = './resource/battle_flag.png'
 
 testImg = './resource/battle2.png'
-=======
+
 """
 不知为什么么，pyautogui 在游戏的时候图像识别率很低。(但chrome那个测试，却是很灵)
 试了下AutoIt3的原生脚本，还有按键精灵，同样有识别率问题。
@@ -44,7 +43,6 @@ Nodejs 那边就有点搞笑了。。。
 
 mushroom = './resource/mushroom.bmp'
 sweetSmell = './resource/sweetsmell.bmp'
->>>>>>> 19564256175bc723ad11f9300467dfae917edfc0
 
 def isBattleStart():
   # 识别战斗是否开始。
