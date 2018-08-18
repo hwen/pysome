@@ -3,7 +3,7 @@ from time import sleep
 import random
 
 def randomWait():
-  wait = round(random.uniform(0.15, 1.85), 2)
+  wait = round(random.uniform(0.18, 1), 2)
   sleep(wait)
   print('wait:' + str(wait))
 
