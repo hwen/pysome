@@ -245,7 +245,8 @@ def findShiny():
       shinyMove()
 
 def test():
-  pos = pyautogui.locateCenterOnScreen(mushroom, grayscale = True)
+  # 安装 opencv 后可以加 confidence
+  pos = pyautogui.locateCenterOnScreen(mushroom, grayscale = True, confidence = 0.8)
   pos2 = pyautogui.locateCenterOnScreen(sweetSmell)
   print('mushroom is:')
   print(pos)
