@@ -3,6 +3,7 @@ import random
 from time import sleep
 from utils import randomWait
 
+<<<<<<< HEAD
 rpath = './resource/'
 drg = './resource/dragon.png'
 drgNotGood = './resource/dragon_notgood.png'
@@ -25,6 +26,25 @@ runImg = './resource/run.png'
 battleFlag = './resource/battle_flag.png'
 
 testImg = './resource/battle2.png'
+=======
+"""
+不知为什么么，pyautogui 在游戏的时候图像识别率很低。(但chrome那个测试，却是很灵)
+试了下AutoIt3的原生脚本，还有按键精灵，同样有识别率问题。
+而且在普通屏下测试了也是不行，又试过换过游戏UI，希望提高识别率。
+图像识别还是不行。
+搞到2点多。。。还是放弃这个方案算了。
+嘛，算是学到不少东西。
+py 还有个叫 pywinauto 也是个不错的库。以后如果要写自动脚本，可以试试。
+
+Nodejs 那边就有点搞笑了。。。
+有个叫 Robotjs 的东东，库都写了两年多了，图像识别还放在项目 planning 里
+笑人。。。
+"""
+
+
+mushroom = './resource/mushroom.bmp'
+sweetSmell = './resource/sweetsmell.bmp'
+>>>>>>> 19564256175bc723ad11f9300467dfae917edfc0
 
 def isBattleStart():
   # 识别战斗是否开始。
@@ -226,45 +246,15 @@ def findShiny():
     else:
       shinyMove()
 
-def useCoinMove():
-  print('fuck you')
-
-def miaomiao():
-  RunCount = 0
-  shinyMove()
-  while RunCount < 32:
-    if isBattleStart():
-      RunCount += 1
-      useCoinMove()
-      sleep(1)
-      pyautogui.press('k')
-      randomWait()
-      pyautogui.press('k')
-    else:
-      shinyMove()
-
-
-def testPos():
-  print('testing...')
-  count = 0
-  while True:
-    pos = pyautogui.position()
-    count += 1
-    print(pos)
-    if count > 40:
-      break
-  print('end')
-
 def test():
-  print('test...')
-  x, y, z, j = pyautogui.locateOnScreen('./resource/mroom.png', grayscale = False, confidence=0.8)
-  pos = (x, y)
+  pos = pyautogui.locateCenterOnScreen(mushroom, grayscale = True)
+  pos2 = pyautogui.locateCenterOnScreen(sweetSmell)
+  print('mushroom is:')
   print(pos)
-  pyautogui.moveTo(pos)
+  print('sweetSmell is:')
+  print(pos2)
 
 print('waiting...')
-sleep(3)
-print('ready to go')
-# testPos()
-# battleForEv()
+sleep(5)
+print('ready....')
 test()
