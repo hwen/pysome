@@ -35,9 +35,9 @@ testImg = './resource/battle2.png'
 嘛，算是学到不少东西。
 py 还有个叫 pywinauto 也是个不错的库。以后如果要写自动脚本，可以试试。
 
-Nodejs 那边就有点搞笑了。。。
-有个叫 Robotjs 的东东，库都写了两年多了，图像识别还放在项目 planning 里
-笑人。。。
+Nodejs 
+有个叫 Robotjs 的东东，不太实用
+
 """
 
 
